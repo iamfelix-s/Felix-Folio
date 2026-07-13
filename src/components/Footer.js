@@ -1,36 +1,25 @@
 import Link from "next/link";
 import React from "react";
-import Layout from "./Layout";
 
 const Footer = () => {
   return (
-    <footer
-      className="w-full border-t-2 border-solid border-dark
-    font-medium text-lg dark:text-light dark:border-light sm:text-base
-    "
-    >
-      <Layout className="py-8 flex items-center justify-between lg:flex-col lg:py-6">
-        <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
-
-        <div className="flex items-center lg:py-2">
-          Built with <span className="text-primary text-2xl px-1 dark:text-primaryDark">&#9825;	</span> by&nbsp;
+    <footer className="w-full border-t border-dark/10 dark:border-white/5 py-12 mt-24 text-sm font-semibold tracking-wide">
+      <div className="max-w-[1200px] mx-auto w-[90%] flex items-center justify-between lg:flex-col lg:gap-4 px-4 text-dark/50 dark:text-light/50">
+        <span>{new Date().getFullYear()} &copy; Felix Folio. All rights reserved.</span>
+        <div className="flex items-center gap-1.5">
+          <span>Engineered by</span>
           <Link
             href="https://www.linkedin.com/in/paul-benjamin-felix-b8b481249/"
             target="_blank"
-            className="underline underline-offset-2"
+            className="text-dark dark:text-light hover:underline font-bold"
           >
             Felix
           </Link>
         </div>
-
-        <Link
-          href="#"
-          target="_blank"
-          className="underline underline-offset-2"
-        >
-          Wanna Recruit me?
+        <Link href="/contact" className="hover:text-dark dark:hover:text-light transition-colors">
+          Wanna recruit me?
         </Link>
-      </Layout>
+      </div>
     </footer>
   );
 };

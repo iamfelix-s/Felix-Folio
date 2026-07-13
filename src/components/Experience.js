@@ -1,96 +1,134 @@
 import React, { useRef } from "react";
-import {
-  motion,
-  useScroll,
-} from "framer-motion";
-import LiIcon from "./LiIcon";
+import { motion } from "framer-motion";
 
-
-const Details = ({ position, company, companyLink, time, address, work }) => {
-  const ref = useRef(null);
+const CaseStudyCard = ({ position, company, companyLink, time, address, metrics, tools, problem, workflow, value, lessons }) => {
   return (
-    <li
-      ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-start justify-between md:w-[80%]"
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="glass-card p-8 md:p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-xl text-left w-full relative mb-10 last:mb-0 overflow-hidden"
     >
-      <LiIcon reference={ref} />
-      <motion.div
-        initial={{ y: 50 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 0.5, type: "spring" }}
-      >
-        <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
-          {position}{" "}
-          <a
-            className="capitalize text-primary dark:text-primaryDark"
-            href={companyLink}
-            target={"_blank"}
-          >
-            @{company}
-          </a>
-        </h3>
-        <span className="capitalize text-dark/75 font-medium dark:text-light/50 xs:text-sm">
-          {time} | {address}
-        </span>
-        <p className="font-medium w-full md:text-sm"> {work}</p>
-      </motion.div>
-    </li>
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primaryDark to-primary opacity-5 blur-xl pointer-events-none" />
+      
+      <div className="grid grid-cols-12 gap-12 lg:grid-cols-1 relative z-10">
+        
+        {/* Left Column: Context Metadata & Metrics */}
+        <div className="col-span-4 flex flex-col justify-between border-r border-dark/5 dark:border-white/5 pr-8 lg:border-r-0 lg:border-b lg:pb-8 lg:pr-0">
+          <div>
+            <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500 bg-indigo-500/10 px-3 py-1 rounded-full">
+              Case Study
+            </span>
+            <h3 className="text-3xl font-black tracking-tight mt-6 text-dark dark:text-light leading-tight">
+              {position}
+            </h3>
+            <a
+              href={companyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-bold text-dark/70 dark:text-zinc-400 hover:text-indigo-500 transition-colors mt-1 inline-block"
+            >
+              @{company}
+            </a>
+            <span className="block text-xs font-semibold text-dark/45 dark:text-zinc-500 tracking-wider mt-2">
+              {time} | {address}
+            </span>
+          </div>
+
+          <div className="mt-10">
+            <span className="text-4xl font-extrabold text-gradient block">{metrics}</span>
+            <span className="text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-wider block mt-1">Impact & Highlight</span>
+          </div>
+
+          <div className="mt-8">
+            <span className="text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest block mb-2">Tools Stack</span>
+            <div className="flex flex-wrap gap-1.5">
+              {tools.map((tool, idx) => (
+                <span key={idx} className="text-[10px] font-black px-2.5 py-1 rounded-full bg-dark/5 dark:bg-light/10 text-dark/70 dark:text-light/80 border border-dark/5 dark:border-light/10">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Detailed Narrative */}
+        <div className="col-span-8 flex flex-col gap-6 text-base text-dark/80 dark:text-zinc-300 font-medium">
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">The Problem</h4>
+            <p className="leading-relaxed text-dark/70 dark:text-zinc-400">
+              {problem}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Workflow & Responsibilities</h4>
+            <p className="leading-relaxed text-dark/70 dark:text-zinc-400">
+              {workflow}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Business Value</h4>
+            <p className="leading-relaxed text-dark/70 dark:text-zinc-400">
+              {value}
+            </p>
+          </div>
+
+          <div className="border-t border-dark/5 dark:border-white/5 pt-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Lessons Learned</h4>
+            <p className="leading-relaxed text-dark/70 dark:text-zinc-400 italic">
+              {lessons}
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </motion.div>
   );
 };
 
 const Experience = () => {
-
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "center start"],
-  });
-
   return (
+    <div className="my-24 md:my-16">
+      <h2 className="font-black text-5xl mb-12 w-full text-center md:text-4xl xs:text-3xl glow-text text-gradient">
+        Professional Journey
+      </h2>
 
-      <div className="my-64">
-        <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
-          Experience
-        </h2>
+      <div className="max-w-[1200px] mx-auto w-[95%]">
+        <CaseStudyCard
+          position="Fraud Analyst"
+          company="CES"
+          companyLink="https://www.cesltd.com/"
+          time="Aug 2025 - Present"
+          address="Chennai, TN"
+          metrics="Audited 10,000+ Profiles"
+          tools={["SQL", "Risk Classifiers", "Data Auditing", "Pattern Analysis", "Excel"]}
+          problem="High-volume transactional flows presented complex vectors for transaction fraud and financial leakage. Detecting these anomalies required analytical logic, risk assessment, and systematic database queries."
+          workflow="Conducted daily audits of transaction datasets using SQL query logic. Designed and validated structured rule-filters to detect suspicious behavior patterns and anomalies. Investigated high-risk merchant profiles and verified accounts."
+          value="Mitigated financial liabilities by delivering high-precision risk metrics and predictive reports to operations, leading to data-driven security policies."
+          lessons="I learned that data auditing requires absolute precision and logical rigor. Speed is useless without systematic verification, especially in high-risk financial datasets."
+        />
 
-        <div ref={ref} className="relative w-[75%] mx-auto lg:w-[90%] md:w-full">
-          <motion.div
-            className="absolute left-9 top-0 w-[4px] md:w-[2px] md:left-[30px] xs:left-[20px] h-full bg-dark 
-            origin-top  dark:bg-primaryDark dark:shadow-3xl"
-            style={{ scaleY: scrollYProgress }}
-          />
-          <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-            <Details
-              position="Data Science Intern"
-              company="VCodez"
-              companyLink="https://vcodez.com"
-              time="Feb 2025 - July 2025"
-              address="Chennai, TN."
-              work="Collaborated with a team to develop new features enhancing data analysis and visualization, focusing on improving the accuracy, relevance, and insights derived from large-scale datasets."
-            />
-
-            <Details
-              position="Data Science Intern"
-              company="DLK Technolgies"
-              companyLink="https://digitalmarketing.dlktech.co.in/"
-              time="Summer Intern"
-              address="Chennai, TN."
-              work="Worked on data collection, preprocessing, and analysis to support the development of a new mobile app feature; generated insights from user behavior data and helped optimize content recommendations and system performance."
-            />
-
-            <Details
-              position="UIUX Desginer Intern"
-              company="Weboin"
-              companyLink="https://weboin.com/"
-              time="Aug 2024 - Oct 2024"
-              address="Chennai, TN."
-              work="Designed and implemented a new user interface for a mobile app feature, enhancing user experience and usability, which led to a 25% increase in client engagement."
-            />
-          </ul>
-        </div>
-        </div>
-    );
+        <CaseStudyCard
+          position="Data Science Intern"
+          company="VCodez"
+          companyLink="https://vcodez.com"
+          time="Feb 2025 - July 2025"
+          address="Chennai, TN"
+          metrics="4+ Preprocessing Pipelines"
+          tools={["Python", "Pandas", "Scikit-Learn", "XGBoost", "SQL", "Git"]}
+          problem="Raw logs and user engagement data sat in disparate siloed formats, limiting the capacity of analytics to identify retention curves or predict customer attrition triggers."
+          workflow="Built and optimized ETL and feature-extraction pipelines in Python. Conducted Exploratory Data Analysis (EDA) to map active retention metrics. Trained and fine-tuned gradient-boosted classification models (XGBoost) for user profiling."
+          value="Provided the data infrastructure and preprocessed records that powered downstream stakeholder dashboards, cutting manual data queries for analytics by hours."
+          lessons="Building machine learning models is only a fraction of the challenge; feature engineering, data hygiene, and translating quantitative metrics into actionable business context are where true values are made."
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Experience;
+
+

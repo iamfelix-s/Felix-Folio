@@ -1,61 +1,89 @@
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React from "react";
 
-
-const Skill = ({ name, x, y }) => {
-  const ref = useRef(null);
+const EcosystemCard = ({ title, technologies, flow, relationship }) => {
   return (
     <motion.div
-      ref={ref}
-      whileHover={{scale:1.05}}
-      initial={{ x: 0, y: 0 }}
-      whileInView={{ x: x, y: y, transition: {duration: 1.5} }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true }}
-      className="cursor-pointer w-max origin-center absolute 
-        font-semibold bg-dark text-light py-3 px-6 rounded-full dark:bg-light dark:text-dark
-        lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3  xs:bg-transparent xs:dark:bg-transparent xs:text-dark xs:dark:text-light xs:font-bold
-        "
+      className="glass-card p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-lg text-left"
     >
-      {name}
+      <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500 bg-indigo-500/10 px-3 py-1 rounded-full">
+        Ecosystem
+      </span>
+      
+      <h3 className="text-2xl font-black mt-4 mb-2 text-dark dark:text-light">
+        {title}
+      </h3>
+      <span className="block text-xs font-bold text-indigo-500/80 dark:text-indigo-400/80 tracking-wide uppercase mb-4">
+        {flow}
+      </span>
+
+      {/* Technologies List */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {technologies.map((tech, idx) => (
+          <span key={idx} className="text-xs font-bold px-3 py-1.5 rounded-full bg-dark/5 dark:bg-light/10 text-dark/85 dark:text-light/90 border border-dark/5 dark:border-light/10">
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {/* Practical System Relationship */}
+      <div className="border-t border-dark/5 dark:border-white/5 pt-4">
+        <span className="text-[10px] font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest block mb-2">
+          System Relationship
+        </span>
+        <p className="text-sm font-semibold text-dark/70 dark:text-zinc-400 leading-relaxed">
+          {relationship}
+        </p>
+      </div>
     </motion.div>
   );
 };
 
 const Skills = () => {
-  const ref = useRef(null);
   return (
-<>
-      <h2 className="font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32">
-        Skills
-      </h2> 
-    <div
-      ref={ref}
-      className="w-full h-[100vh] relative bg-circularLight dark:bg-circularDark  flex items-center justify-center 
-      mb-64 md:mb-32 rounded-full
-      lg:bg-circularLightLg lg:dark:bg-circularDarkLg md:bg-circularLightMd md:dark:bg-circularDarkMd 
-      sm:bg-circularLightSm sm:dark:bg-circularDarkSm lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] 
-      "
-    >
+    <div className="my-24 md:my-16">
+      <h2 className="font-black text-5xl mb-12 w-full text-center md:text-4xl xs:text-3xl glow-text text-gradient">
+        Capabilities & Systems
+      </h2>
+      
+      <div className="grid grid-cols-2 md:grid-cols-1 gap-6 mt-8 max-w-[1200px] mx-auto w-[95%]">
+        
+        <EcosystemCard
+          title="Analytical Engine & ML Pipeline"
+          flow="Processing → Modeling"
+          technologies={["Python", "NumPy", "Pandas", "Scikit-Learn", "XGBoost"]}
+          relationship="Operates on raw datasets drawn from database layers. Scripts clean anomalies, execute feature scaling, and pass optimized data arrays to predictive algorithms for multi-class classification and forecasting."
+        />
 
-        <motion.div whileHover={{scale:1.05}} className="cursor-pointer flex rounded-full font-semibold bg-dark text-light p-8 shadow-dark
-        dark:bg-light dark:text-dark lg:p-6 md:p-4 xs:text-xs xs:p-2
-        ">
-        Web
-      </motion.div>
+        <EcosystemCard
+          title="Data Pipelines & Schemas"
+          flow="Ingestion → Integration"
+          technologies={["SQL", "MySQL", "SQLite", "PostgreSQL"]}
+          relationship="Acts as the structural repository. Implements indexing, schemas, and optimized query routines to deliver datasets cleanly to preprocessing frameworks or transactional microservices."
+        />
 
-        <Skill name="HTML" x="-20vw" y="2vw" />
-          <Skill name="CSS" x="-5vw" y="-10vw" />
-          <Skill name="JavaScript" x="20vw" y="6vw" />
-          <Skill name="SQLite" x="0vw" y="12vw" />
-          <Skill name="ExpressJS" x="-20vw" y="-15vw" />
-          <Skill name="NodeJS" x="15vw" y="-12vw" />
-          <Skill name="Github" x="-35vw" y="-5vw" />
-          <Skill name="Web Design" x="32vw" y="-5vw" />
-          <Skill name="Data Analysis" x="0vw" y="-20vw" />
-          <Skill name="MySQL" x="-25vw" y="18vw" />
-          <Skill name="Power BI" x="28vw" y="18vw" />
-    </div></>
+        <EcosystemCard
+          title="Business Intelligence & Analytics"
+          flow="Aggregation → Visualization"
+          technologies={["Power BI", "DAX", "Data Modeling", "Excel"]}
+          relationship="Translates SQL metrics and Python model outputs into interactive executive reports. Employs relational modeling and custom DAX calculations to isolate operational risks for decision-makers."
+        />
+
+        <EcosystemCard
+          title="Full-Stack Application Delivery"
+          flow="Interface ← API Integration"
+          technologies={["JavaScript", "ReactJS", "NextJS", "NodeJS", "ExpressJS", "Tailwind CSS"]}
+          relationship="Engineers the client-facing application layers. Uses server-side caching and API gateways to bind databases and machine learning endpoints to clean, responsive interfaces."
+        />
+      </div>
+    </div>
   );
 };
 
 export default Skills;
+
+

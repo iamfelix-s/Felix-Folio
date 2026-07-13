@@ -38,89 +38,104 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Felix Folio | About</title>
-        <meta name="description" content="Learn more about CodeBucks, a Next.js developer with a passion for 
-        creating innovative solutions. Discover tips for building a developer portfolio and insights on 
-        full-stack development, front-end development, and back-end development." />
+        <title>Felix Folio | About - Narrative & Core Skills</title>
+        <meta name="description" content="Learn about Felix's professional background in Computer Science & Engineering, his logic-driven analytical methodology, and his software engineering philosophy." />
       </Head>
-      <TransitionEffect />
       <main
-        className={`flex  w-full flex-col items-center justify-center dark:text-light`}
+        className="flex w-full flex-col items-center justify-center relative z-10"
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Passion Fuels Purpose!"
-            className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+            text="Quantitative Rigor. Product Craft."
+            className="mb-10 !text-6xl !leading-tight lg:!text-5xl sm:!text-4xl xs:!text-3xl font-black text-gradient"
           />
 
-          <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
-            <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 
-            md:col-span-8">
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
-                ABOUT ME
-              </h2>
-              <p className="font-medium">
-                Hi, I&apos;m <strong>Felix</strong>, a web developer, UI/UX designer, and aspiring data scientist with a passion for creating beautiful, functional, and data-driven digital experiences. With 2+ years of Hands-on experience, I am currently pursuing my BE in Computer Science and Engineering, strengthening my foundation in data analytics to combine creativity with data-driven insights.
-              </p>
-              <p className="my-4 font-medium">
-                I believe that design and data are closely intertwined – it&apos;s not just about making things look good, but about solving real-world problems, optimizing user experiences, and creating intuitive interactions backed by data. My experience in data analytics enables me to leverage user insights to build solutions that truly resonate with users.
-              </p>
-              <p className="font-medium">
-                Whether I&apos;m working on a website, mobile app, or complex digital product, I bring my commitment to design excellence and user-centered thinking.
-              </p>
-
+          {/* Stats Bar */}
+          <div className="flex justify-between items-center w-full max-w-[1200px] mx-auto border-y border-dark/5 dark:border-white/5 py-5 mb-10 gap-8 lg:grid lg:grid-cols-3 md:grid-cols-1">
+            <div className="text-left">
+              <span className="text-4xl font-black text-gradient"><AnimatedNumberFramerMotion value={10} />+</span>
+              <span className="block text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest mt-1">Real-World Projects</span>
             </div>
-            <div className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-dark 
-            bg-light p-8 dark:border-light dark:bg-dark
-            xl:col-span-4 md:col-span-8 md:order-1
-            ">
-              <div
-                className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl 
-                bg-dark
-        dark:bg-light  "
-              />
-              <Image
-                className="h-auto w-full rounded-2xl"
-                src={profile}
-                alt="Codebucks"
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                priority
-              />
+            <div className="text-left">
+              <span className="text-4xl font-black text-gradient"><AnimatedNumberFramerMotion value={1110} />+</span>
+              <span className="block text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest mt-1">Days of Coding</span>
             </div>
-            <div className="col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row 
-            xl:items-center md:order-3">
-              <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={10} />+
-                </span>
-                <h2 className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
-                xl:text-center md:text-lg sm:text-base xs:text-sm">
-                  Real World Projects
-                </h2>
-              </div>
+            <div className="text-left">
+              <span className="text-4xl font-black text-gradient"><AnimatedNumberFramerMotion value={2} />+</span>
+              <span className="block text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest mt-1">Years of Practice</span>
+            </div>
+          </div>
 
-              <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={1110} />+
-                </span>
-                <h2 className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
-                xl:text-center md:text-lg sm:text-base xs:text-sm">
-                  Days of Works
-                </h2>
+          {/* 3-Column Editorial Grid */}
+          <div className="grid grid-cols-12 gap-8 lg:grid-cols-1 lg:gap-10 w-full max-w-[1200px] mx-auto text-left leading-relaxed">
+            
+            {/* Column 1: Image & Mission */}
+            <div className="col-span-4 flex flex-col gap-8">
+              <div className="rounded-2xl overflow-hidden border border-dark/10 dark:border-white/5 bg-dark/5 dark:bg-white/5 p-4">
+                <Image
+                  className="h-auto w-full rounded-xl object-cover hover:scale-[1.02] transition-transform duration-500"
+                  src={profile}
+                  alt="Felix"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  priority
+                />
               </div>
-
-              <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={2} />+
-                </span>
-                <h2 className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
-                xl:text-center md:text-lg sm:text-base xs:text-sm">
-                  Years of Hands-on
-                </h2>
+              <div className="glass-card p-8 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm">
+                <h3 className="text-xs font-bold text-indigo-500 uppercase tracking-widest mb-3">Core Mission</h3>
+                <p className="text-sm font-semibold text-dark/80 dark:text-zinc-300">
+                  To build performant systems and predictive analytics architectures that transform raw data streams into high-impact operational tools.
+                </p>
               </div>
             </div>
+
+            {/* Column 2: Journey & Workflow */}
+            <div className="col-span-4 flex flex-col gap-8">
+              <div>
+                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                  Professional Journey
+                </h2>
+                <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
+                  My entry into technology began in Computer Science & Engineering, where I fell in love with algorithmic structure and data organization. Over time, I discovered that software is only half the puzzle—the real value lies in the data flowing through it.
+                </p>
+                <p className="text-base text-dark/80 dark:text-zinc-400 font-medium mt-4">
+                  This realization led me to focus on Data Science and quantitative analytics. Today, I build systems that are both computationally robust and capable of generating actionable intelligence.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                  Problem Solving
+                </h2>
+                <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
+                  I treat code and modeling with the same logical rigor. When building databases, pipelines, or ML classifiers, I design defensively and verify empirical metrics (precision, recall, latency) at every iteration. I avoid quick hacks in favor of clean, structural code.
+                </p>
+              </div>
+            </div>
+
+            {/* Column 3: Philosophy & Goals */}
+            <div className="col-span-4 flex flex-col gap-8">
+              <div>
+                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                  Technical Philosophy
+                </h2>
+                <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
+                  Excellent engineering requires empathy. Whether it is a back-end transaction cache or an analytical visualizer, my background in design allows me to translate complex back-end architectures into clean, intuitive interfaces that recruiters and developers enjoy using.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                  Growth & Motivation
+                </h2>
+                <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
+                  I am driven by structural efficiency—getting a dataset cleanly preprocessed or refactoring a complex codebase into elegant services. 
+                </p>
+                <p className="text-base text-dark/80 dark:text-zinc-400 font-medium mt-4">
+                  Currently, I am expanding my knowledge in advanced statistical forecasting and real-time streaming architectures to further strengthen my full-stack capabilities.
+                </p>
+              </div>
+            </div>
+
           </div>
 
           <Skills />
