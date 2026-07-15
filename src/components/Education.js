@@ -7,11 +7,11 @@ const Details = ({ type, time, place, info }) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-start justify-between md:w-[80%]"
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-start justify-between md:w-[80%] sm:w-[90%]"
     >
       <AboutIcon reference={ref} />
       <motion.div
-        initial={{ y: 50 }}
+        initial={{ y: 30 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
@@ -34,8 +34,8 @@ const Education = () => {
   });
 
   return (
-    <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Education</h2>
+    <div className="my-64 md:my-24">
+      <h2 className="font-bold text-8xl mb-32 md:mb-12 w-full text-center md:text-5xl sm:text-4xl xs:text-3xl">Education</h2>
 
       <div ref={ref} className="relative w-[75%] mx-auto lg:w-[90%] md:w-full">
         <motion.div

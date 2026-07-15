@@ -13,24 +13,24 @@ import proj5 from "../../public/images/projects/agency-website-cover-image.jpg";
 import proj6 from "../../public/images/projects/devdreaming.jpg";
 import TransitionEffect from "@/components/TransitionEffect";
 
-const ProductLaunch = ({ title, type, tech, img, link, github, architecture, features, challenge, impact, future }) => {
+const ProductLaunch = ({ title, type, tech, img, link, github, architecture, features, challenge, impact, future, priority = false }) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true, margin: "-120px" }}
-      className="glass-card p-8 md:p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-xl w-full mb-10 relative overflow-hidden text-left"
+      className="glass-card p-8 md:p-6 sm:p-4 rounded-2xl border border-dark/10 dark:border-white/5 shadow-xl w-full mb-10 relative overflow-hidden text-left"
     >
       <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primaryDark to-primary opacity-[0.03] blur-2xl pointer-events-none" />
 
       {/* Header Block */}
-      <div className="flex justify-between items-start flex-wrap gap-4 border-b border-dark/5 dark:border-white/5 pb-4 mb-5 relative z-10">
+      <div className="flex justify-between items-start flex-wrap gap-4 md:gap-3 border-b border-dark/5 dark:border-white/5 pb-4 mb-5 relative z-10">
         <div>
           <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-500">
             {type}
           </span>
-          <h3 className="text-3xl font-black tracking-tight mt-2 text-dark dark:text-light leading-tight">
+          <h3 className="text-3xl md:text-2xl sm:text-xl font-black tracking-tight mt-2 text-dark dark:text-light leading-tight">
             {title}
           </h3>
         </div>
@@ -55,7 +55,7 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
       </div>
 
       {/* Details Grid */}
-      <div className="grid grid-cols-12 gap-12 lg:grid-cols-1 relative z-10">
+      <div className="grid grid-cols-12 gap-12 lg:flex lg:flex-col lg:gap-6 relative z-10">
         
         {/* Visual Frame & Tech Tags */}
         <div className="col-span-5 flex flex-col gap-6">
@@ -65,11 +65,12 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
               alt={title}
               className="h-auto w-full rounded-xl object-cover hover:scale-[1.01] transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, 40vw"
+              priority={priority}
             />
           </div>
           <div>
-            <span className="text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest block mb-3">Technologies Deployed</span>
-            <div className="flex flex-wrap gap-1.5">
+            <span className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest block mb-3">Technologies Deployed</span>
+            <div className="flex flex-wrap gap-1.5 sm:gap-1">
               {tech.map((t, idx) => (
                 <span key={idx} className="text-[10px] font-black px-2.5 py-1.5 rounded-full bg-dark/5 dark:bg-light/10 text-dark/70 dark:text-light/80 border border-dark/5 dark:border-light/10">
                   {t}
@@ -78,7 +79,7 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
             </div>
           </div>
         </div>
-
+ 
         {/* Specs & Architecture */}
         <div className="col-span-7 flex flex-col gap-6 text-sm text-dark/80 dark:text-zinc-300 font-medium leading-relaxed">
           <div>
@@ -95,7 +96,7 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 border-t border-dark/5 dark:border-white/5 pt-6">
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-6 border-t border-dark/5 dark:border-white/5 pt-6">
             <div>
               <h4 className="text-xs font-extrabold uppercase tracking-wider text-indigo-500 mb-1.5">Engineering Challenge</h4>
               <p className="text-xs text-dark/70 dark:text-zinc-400 leading-normal">{challenge}</p>
@@ -145,6 +146,7 @@ export default function Projects() {
               img={proj1}
               link="https://github.com/iamfelix-s/VCodez/tree/main/Translatify"
               github="https://github.com/iamfelix-s/VCodez/tree/main/Translatify"
+              priority={true}
               architecture="Client React container feeds user text/speech input to a Node.js middleware. The backend proxies translation tasks to pre-trained transformer pipelines on HuggingFace, caching repeated phrases in localized caches."
               features={[
                 "Real-time dual translation stream for voice-to-text inputs.",

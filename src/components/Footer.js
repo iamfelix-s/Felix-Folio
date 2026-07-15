@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-dark/10 dark:border-white/5 py-12 mt-24 text-sm font-semibold tracking-wide">
-      <div className="max-w-[1200px] mx-auto w-[90%] flex items-center justify-between lg:flex-col lg:gap-4 px-4 text-dark/50 dark:text-light/50">
+    <footer className="w-full border-t border-dark/10 dark:border-white/5 py-12 md:py-8 mt-24 md:mt-12 text-sm font-semibold tracking-wide">
+      <div className="max-w-[1200px] mx-auto w-[90%] flex items-center justify-between lg:flex-col lg:gap-4 md:text-center px-4 text-dark/65 dark:text-light/65">
         <span>{new Date().getFullYear()} &copy; Felix Folio. All rights reserved.</span>
         <div className="flex items-center gap-1.5">
           <span>Engineered by</span>

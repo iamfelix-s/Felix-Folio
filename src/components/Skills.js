@@ -8,13 +8,13 @@ const EcosystemCard = ({ title, technologies, flow, relationship }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true }}
-      className="glass-card p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-lg text-left"
+      className="glass-card p-6 md:p-5 rounded-2xl border border-dark/10 dark:border-white/5 shadow-lg text-left"
     >
       <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500 bg-indigo-500/10 px-3 py-1 rounded-full">
         Ecosystem
       </span>
       
-      <h3 className="text-2xl font-black mt-4 mb-2 text-dark dark:text-light">
+      <h3 className="text-2xl md:text-xl font-black mt-4 mb-2 text-dark dark:text-light">
         {title}
       </h3>
       <span className="block text-xs font-bold text-indigo-500/80 dark:text-indigo-400/80 tracking-wide uppercase mb-4">
@@ -32,7 +32,7 @@ const EcosystemCard = ({ title, technologies, flow, relationship }) => {
 
       {/* Practical System Relationship */}
       <div className="border-t border-dark/5 dark:border-white/5 pt-4">
-        <span className="text-[10px] font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest block mb-2">
+        <span className="text-[10px] font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest block mb-2">
           System Relationship
         </span>
         <p className="text-sm font-semibold text-dark/70 dark:text-zinc-400 leading-relaxed">
@@ -46,7 +46,7 @@ const EcosystemCard = ({ title, technologies, flow, relationship }) => {
 const Skills = () => {
   return (
     <div className="my-24 md:my-16">
-      <h2 className="font-black text-5xl mb-12 w-full text-center md:text-4xl xs:text-3xl glow-text text-gradient">
+      <h2 className="font-black text-5xl mb-12 md:mb-6 w-full text-center md:text-4xl sm:text-3xl xs:text-2xl glow-text text-gradient">
         Capabilities & Systems
       </h2>
       

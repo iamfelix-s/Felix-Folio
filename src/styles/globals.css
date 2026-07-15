@@ -12,16 +12,26 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6.5rem;
+    background-color: #fafafa;
+    color: #0f0f11;
+  }
+  
+  html.dark {
     background-color: #040405;
     color: #f4f4f5;
   }
 
   body {
-    background-color: #040405;
-    color: #f4f4f5;
+    background-color: #fafafa;
+    color: #0f0f11;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+  
+  .dark body {
+    background-color: #040405;
+    color: #f4f4f5;
   }
 
   /* Typography Sizing and Editorial Spacing */
@@ -65,6 +75,11 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+@media (max-width: 767px) {
+  .editorial-grid {
+    background-size: 40px 40px;
+  }
+}
 
 /* Soft Editorial Lighting Accents */
 .ambient-glow {
@@ -76,23 +91,65 @@
   pointer-events: none;
   z-index: 0;
 }
+@media (max-width: 767px) {
+  .ambient-glow {
+    width: 400px;
+    height: 400px;
+    filter: blur(60px);
+  }
+}
 
-/* Glassmorphic Panel (Apple/Linear Style) */
+/* Glassmorphic Panel (Apple/Linear Style) - Light Mode Default */
 .glass-card {
-  background: rgba(12, 12, 14, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 15, 17, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Mobile-Only Editorial Metric Card */
+@media (max-width: 767px) {
+  .metric-card-mobile {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 15, 17, 0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.01);
+  }
+  .dark .metric-card-mobile {
+    background: rgba(12, 12, 14, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .glass-card-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: background, border-color, box-shadow, transform;
 }
 .glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(15, 15, 17, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 30px rgba(99, 102, 241, 0.01);
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Overrides */
+.dark .glass-card {
+  background: rgba(12, 12, 14, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+.dark .glass-card-hover:hover {
   background: rgba(18, 18, 22, 0.7);
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(99, 102, 241, 0.04);
-  transform: translateY(-2px);
 }
 
 /* Clean Underline hover transition */
@@ -116,11 +173,17 @@
   transform-origin: bottom left;
 }
 
-/* Typography Gradient */
+/* Typography Gradient - Tailwind Native Apply */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @apply bg-gradient-to-r from-[#0f0f11] to-[#52525b] dark:from-[#ffffff] dark:to-[#a1a1aa] bg-clip-text text-transparent;
 }
+
+/* Premium Global Theme Transitions - Restricted to Containers to avoid Webkit text-clip/SVG gradient bugs */
+body, main, header, footer, .glass-card, button, input, textarea, a {
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 300ms cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 

@@ -50,12 +50,12 @@ export default function Contact() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="col-span-7 glass-card p-8 md:p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-xl lg:w-full relative"
+              className="col-span-7 glass-card p-8 md:p-6 sm:p-4 rounded-2xl border border-dark/10 dark:border-white/5 shadow-xl lg:w-full relative"
             >
-              <h2 className="text-2xl font-black mb-2 text-dark dark:text-light text-left">
+              <h2 className="text-2xl sm:text-xl font-black mb-2 text-dark dark:text-light text-left">
                 Drop Me A Line
               </h2>
-              <p className="text-sm font-semibold text-dark/45 dark:text-zinc-500 mb-4 text-left leading-relaxed">
+              <p className="text-sm font-semibold text-dark/60 dark:text-zinc-500 mb-4 text-left leading-relaxed">
                 Fill out the form below, and I will get back to you as soon as possible.
               </p>
 
@@ -80,7 +80,7 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8 text-left relative z-10">
                   <div className="flex flex-col">
-                    <label className="text-xs font-bold mb-2 text-dark/45 dark:text-zinc-500 uppercase tracking-widest">
+                    <label className="text-xs font-bold mb-2 text-dark/60 dark:text-zinc-500 uppercase tracking-widest">
                       Name
                     </label>
                     <input
@@ -91,12 +91,12 @@ export default function Contact() {
                       onChange={handleInputChange}
                       placeholder="Your name"
                       disabled={status === "submitting"}
-                      className="w-full bg-transparent border-b border-dark/10 dark:border-white/5 focus:border-dark dark:focus:border-light py-2 text-dark dark:text-light font-semibold outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-dark/10 dark:border-white/5 focus:border-dark dark:focus:border-light py-2 md:py-3 text-dark dark:text-light font-semibold outline-none transition-colors"
                     />
                   </div>
 
                   <div className="flex flex-col">
-                    <label className="text-xs font-bold mb-2 text-dark/45 dark:text-zinc-500 uppercase tracking-widest">
+                    <label className="text-xs font-bold mb-2 text-dark/60 dark:text-zinc-500 uppercase tracking-widest">
                       Email
                     </label>
                     <input
@@ -107,12 +107,12 @@ export default function Contact() {
                       onChange={handleInputChange}
                       placeholder="Your email address"
                       disabled={status === "submitting"}
-                      className="w-full bg-transparent border-b border-dark/10 dark:border-white/5 focus:border-dark dark:focus:border-light py-2 text-dark dark:text-light font-semibold outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-dark/10 dark:border-white/5 focus:border-dark dark:focus:border-light py-2 md:py-3 text-dark dark:text-light font-semibold outline-none transition-colors"
                     />
                   </div>
 
                   <div className="flex flex-col">
-                    <label className="text-xs font-bold mb-2 text-dark/45 dark:text-zinc-500 uppercase tracking-widest">
+                    <label className="text-xs font-bold mb-2 text-dark/60 dark:text-zinc-500 uppercase tracking-widest">
                       Message
                     </label>
                     <textarea
@@ -130,7 +130,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full rounded-full bg-dark text-light dark:bg-light dark:text-dark font-bold uppercase py-3.5 shadow-md hover:bg-dark/85 dark:hover:bg-light/90 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 disabled:opacity-50"
+                    className="w-full rounded-full bg-dark text-light dark:bg-light dark:text-dark font-bold uppercase py-3.5 md:py-4 shadow-md hover:bg-dark/85 dark:hover:bg-light/90 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 disabled:opacity-50"
                   >
                     {status === "submitting" ? "Sending..." : "Send Message"}
                   </button>
@@ -143,9 +143,9 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="col-span-5 flex flex-col gap-6 lg:w-full text-left"
+              className="col-span-5 flex flex-col gap-6 md:gap-4 lg:w-full text-left"
             >
-              <div className="glass-card p-8 rounded-3xl border border-dark/10 dark:border-white/5 shadow-md flex flex-col gap-2">
+              <div className="glass-card p-8 md:p-5 rounded-3xl border border-dark/10 dark:border-white/5 shadow-md flex flex-col gap-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-1">Direct Outreach</span>
                 <h3 className="text-lg font-black text-dark dark:text-light">Email Address</h3>
                 <a
@@ -156,7 +156,7 @@ export default function Contact() {
                 </a>
               </div>
 
-              <div className="glass-card p-8 rounded-3xl border border-dark/10 dark:border-white/5 shadow-md flex flex-col gap-2">
+              <div className="glass-card p-8 md:p-5 rounded-3xl border border-dark/10 dark:border-white/5 shadow-md flex flex-col gap-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-1">Social Connectivity</span>
                 <h3 className="text-lg font-black text-dark dark:text-light">LinkedIn & GitHub</h3>
                 <div className="flex gap-4 mt-2">
@@ -179,7 +179,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="glass-card p-8 rounded-3xl border border-dark/10 dark:border-white/5 shadow-md flex flex-col gap-2">
+              <div className="glass-card p-8 md:p-5 rounded-3xl border border-dark/10 dark:border-white/5 shadow-md flex flex-col gap-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-1">Location Details</span>
                 <h3 className="text-lg font-black text-dark dark:text-light">Current Base</h3>
                 <p className="text-base font-semibold text-dark/70 dark:text-zinc-400">

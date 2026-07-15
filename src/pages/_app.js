@@ -12,11 +12,31 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js").then(
+          (registration) => {
+            console.log("ServiceWorker registration successful: ", registration.scope);
+          },
+          (err) => {
+            console.log("ServiceWorker registration failed: ", err);
+          }
+        );
+      });
+    }
+  }, []);
+
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon" href="/images/circular-text.png" />
       </Head>
       <main
         className={`${montserrat.variable} font-mont bg-[#fafafa] dark:bg-[#040405] text-[#0f0f11] dark:text-[#f4f4f5] w-full min-h-screen h-full relative overflow-hidden transition-colors duration-300`}
@@ -37,11 +57,11 @@ export default function App({ Component, pageProps }) {
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={router.asPath}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="flex-grow pt-24 md:pt-20 pb-8 w-full z-10"
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-grow pt-24 md:pt-20 pb-8 md:pb-4 w-full z-10"
             >
               <Component {...pageProps} />
             </motion.div>

@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
-import profile from "../../public/images/profile/developer-pic-2.jpg";
+import profile from "../../public/images/profile/developer-pic-3.png";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Skills from "@/components/Skills";
@@ -51,23 +51,23 @@ export default function About() {
           />
 
           {/* Stats Bar */}
-          <div className="flex justify-between items-center w-full max-w-[1200px] mx-auto border-y border-dark/5 dark:border-white/5 py-5 mb-10 gap-8 lg:grid lg:grid-cols-3 md:grid-cols-1">
-            <div className="text-left">
-              <span className="text-4xl font-black text-gradient"><AnimatedNumberFramerMotion value={10} />+</span>
-              <span className="block text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest mt-1">Real-World Projects</span>
+          <div className="flex justify-between items-center w-full max-w-[1200px] mx-auto border-y border-dark/5 dark:border-white/5 py-5 mb-10 gap-8 lg:grid lg:grid-cols-3 md:grid-cols-1 md:text-center md:gap-5">
+            <div className="text-left md:text-center">
+              <span className="text-4xl md:text-3xl font-black text-gradient"><AnimatedNumberFramerMotion value={10} />+</span>
+              <span className="block text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1">Real-World Projects</span>
             </div>
-            <div className="text-left">
-              <span className="text-4xl font-black text-gradient"><AnimatedNumberFramerMotion value={1110} />+</span>
-              <span className="block text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest mt-1">Days of Coding</span>
+            <div className="text-left md:text-center">
+              <span className="text-4xl md:text-3xl font-black text-gradient"><AnimatedNumberFramerMotion value={1110} />+</span>
+              <span className="block text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1">Days of Coding</span>
             </div>
-            <div className="text-left">
-              <span className="text-4xl font-black text-gradient"><AnimatedNumberFramerMotion value={2} />+</span>
-              <span className="block text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest mt-1">Years of Practice</span>
+            <div className="text-left md:text-center">
+              <span className="text-4xl md:text-3xl font-black text-gradient"><AnimatedNumberFramerMotion value={2} />+</span>
+              <span className="block text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1">Years of Practice</span>
             </div>
           </div>
 
           {/* 3-Column Editorial Grid */}
-          <div className="grid grid-cols-12 gap-8 lg:grid-cols-1 lg:gap-10 w-full max-w-[1200px] mx-auto text-left leading-relaxed">
+          <div className="grid grid-cols-12 gap-8 lg:grid-cols-1 lg:gap-10 md:gap-6 w-full max-w-[1200px] mx-auto text-left leading-relaxed">
             
             {/* Column 1: Image & Mission */}
             <div className="col-span-4 flex flex-col gap-8">
@@ -80,7 +80,7 @@ export default function About() {
                   priority
                 />
               </div>
-              <div className="glass-card p-8 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm">
+              <div className="glass-card p-8 md:p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm">
                 <h3 className="text-xs font-bold text-indigo-500 uppercase tracking-widest mb-3">Core Mission</h3>
                 <p className="text-sm font-semibold text-dark/80 dark:text-zinc-300">
                   To build performant systems and predictive analytics architectures that transform raw data streams into high-impact operational tools.
@@ -91,7 +91,7 @@ export default function About() {
             {/* Column 2: Journey & Workflow */}
             <div className="col-span-4 flex flex-col gap-8">
               <div>
-                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                <h2 className="text-lg md:text-base font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
                   Professional Journey
                 </h2>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
@@ -103,7 +103,7 @@ export default function About() {
               </div>
 
               <div>
-                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                <h2 className="text-lg md:text-base font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
                   Problem Solving
                 </h2>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
@@ -115,7 +115,7 @@ export default function About() {
             {/* Column 3: Philosophy & Goals */}
             <div className="col-span-4 flex flex-col gap-8">
               <div>
-                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                <h2 className="text-lg md:text-base font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
                   Technical Philosophy
                 </h2>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
@@ -124,7 +124,7 @@ export default function About() {
               </div>
 
               <div>
-                <h2 className="text-lg font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
+                <h2 className="text-lg md:text-base font-black uppercase text-dark dark:text-light mb-4 tracking-wide border-b border-dark/5 dark:border-white/5 pb-2">
                   Growth & Motivation
                 </h2>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">

@@ -5,8 +5,7 @@ import React from 'react'
 
 let MotionLink = motion(Link);
 
-const Logo = () => {
-
+const Logo = React.memo(() => {
   return (
     <div
       className='flex flex-col items-center justify-center mt-2'>
@@ -20,6 +19,8 @@ const Logo = () => {
     >F</MotionLink>
     </div>
   )
-}
+});
 
-export default Logo
+Logo.displayName = "Logo";
+
+export default Logo;

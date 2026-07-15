@@ -7,12 +7,12 @@ const CaseStudyCard = ({ position, company, companyLink, time, address, metrics,
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
       className="glass-card p-8 md:p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-xl text-left w-full relative mb-10 last:mb-0 overflow-hidden"
     >
       <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primaryDark to-primary opacity-5 blur-xl pointer-events-none" />
       
-      <div className="grid grid-cols-12 gap-12 lg:grid-cols-1 relative z-10">
+      <div className="grid grid-cols-12 gap-12 lg:grid-cols-1 lg:gap-6 relative z-10">
         
         {/* Left Column: Context Metadata & Metrics */}
         <div className="col-span-4 flex flex-col justify-between border-r border-dark/5 dark:border-white/5 pr-8 lg:border-r-0 lg:border-b lg:pb-8 lg:pr-0">
@@ -20,7 +20,7 @@ const CaseStudyCard = ({ position, company, companyLink, time, address, metrics,
             <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500 bg-indigo-500/10 px-3 py-1 rounded-full">
               Case Study
             </span>
-            <h3 className="text-3xl font-black tracking-tight mt-6 text-dark dark:text-light leading-tight">
+            <h3 className="text-3xl md:text-2xl font-black tracking-tight mt-6 md:mt-4 text-dark dark:text-light leading-tight">
               {position}
             </h3>
             <a
@@ -31,18 +31,18 @@ const CaseStudyCard = ({ position, company, companyLink, time, address, metrics,
             >
               @{company}
             </a>
-            <span className="block text-xs font-semibold text-dark/45 dark:text-zinc-500 tracking-wider mt-2">
+            <span className="block text-xs font-semibold text-dark/60 dark:text-zinc-500 tracking-wider mt-2">
               {time} | {address}
             </span>
           </div>
 
-          <div className="mt-10">
-            <span className="text-4xl font-extrabold text-gradient block">{metrics}</span>
-            <span className="text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-wider block mt-1">Impact & Highlight</span>
+          <div className="mt-10 md:mt-6">
+            <span className="text-4xl md:text-3xl font-extrabold text-gradient block">{metrics}</span>
+            <span className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-wider block mt-1">Impact & Highlight</span>
           </div>
 
-          <div className="mt-8">
-            <span className="text-xs font-bold text-dark/45 dark:text-zinc-500 uppercase tracking-widest block mb-2">Tools Stack</span>
+          <div className="mt-8 md:mt-4">
+            <span className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest block mb-2">Tools Stack</span>
             <div className="flex flex-wrap gap-1.5">
               {tools.map((tool, idx) => (
                 <span key={idx} className="text-[10px] font-black px-2.5 py-1 rounded-full bg-dark/5 dark:bg-light/10 text-dark/70 dark:text-light/80 border border-dark/5 dark:border-light/10">
@@ -101,7 +101,7 @@ const Experience = () => {
           position="Fraud Analyst"
           company="CES"
           companyLink="https://www.cesltd.com/"
-          time="Aug 2025 - Present"
+          time="October 2025 – May 2026"
           address="Chennai, TN"
           metrics="Audited 10,000+ Profiles"
           tools={["SQL", "Risk Classifiers", "Data Auditing", "Pattern Analysis", "Excel"]}
