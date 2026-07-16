@@ -6,6 +6,8 @@ import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import CommandPalette from "@/components/CommandPalette";
+import CustomCursor from "@/components/CustomCursor";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 
@@ -37,6 +39,44 @@ export default function App({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="apple-touch-icon" href="/images/circular-text.png" />
+        
+        {/* OpenGraph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://felixfolio.vercel.app/" />
+        <meta property="og:image" content="https://felixfolio.vercel.app/images/profile/developer-pic-3.png" />
+        <meta property="og:site_name" content="Felix Folio" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://felixfolio.vercel.app/" />
+        <meta name="twitter:image" content="https://felixfolio.vercel.app/images/profile/developer-pic-3.png" />
+
+        {/* JSON-LD Person Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Felix",
+              "jobTitle": "Data Specialist & Software Engineer",
+              "url": "https://felixfolio.vercel.app",
+              "sameAs": [
+                "https://github.com/iamfelix-s",
+                "https://linkedin.com"
+              ],
+              "knowsAbout": [
+                "Data Science",
+                "Data Analytics",
+                "Software Engineering",
+                "Python",
+                "SQL",
+                "React",
+                "Next.js"
+              ]
+            })
+          }}
+        />
       </Head>
       <main
         className={`${montserrat.variable} font-mont bg-[#fafafa] dark:bg-[#040405] text-[#0f0f11] dark:text-[#f4f4f5] w-full min-h-screen h-full relative overflow-hidden transition-colors duration-300`}
@@ -68,6 +108,8 @@ export default function App({ Component, pageProps }) {
           </AnimatePresence>
           
           <Footer />
+          <CommandPalette />
+          <CustomCursor />
         </div>
       </main>
     </>

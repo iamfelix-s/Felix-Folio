@@ -96,6 +96,11 @@ export default function Home() {
           name="description"
           content="Explore the flagship portfolio of Felix, showcasing scalable software engineering, detailed data analytics, and advanced predictive machine learning case studies."
         />
+        <link rel="canonical" href="https://felixfolio.vercel.app/" />
+        <meta property="og:title" content="Felix Folio | Data Science, Analytics & Software Engineering" />
+        <meta property="og:description" content="Explore the flagship portfolio of Felix, showcasing scalable software engineering, detailed data analytics, and advanced predictive machine learning case studies." />
+        <meta name="twitter:title" content="Felix Folio | Data Science, Analytics & Software Engineering" />
+        <meta name="twitter:description" content="Explore the flagship portfolio of Felix, showcasing scalable software engineering, detailed data analytics, and advanced predictive machine learning case studies." />
       </Head>
 
       <article className="flex items-center text-dark dark:text-light min-h-[70vh] md:min-h-0 py-6 relative z-10">
@@ -147,35 +152,108 @@ export default function Home() {
             {/* Metric 1 */}
             <div className="metric-card-mobile">
               <div className="md:w-20 md:flex-shrink-0 flex flex-col items-start justify-start">
-                <span className="text-3xl sm:text-2xl font-extrabold text-gradient">98.4%</span>
+                <span className="text-3xl sm:text-2xl font-extrabold text-gradient">95%+</span>
               </div>
               <div className="md:flex-1 md:min-w-0">
-                <h3 className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1 md:mt-0">Predictive Model Accuracy</h3>
-                <p className="text-xs text-dark/75 dark:text-zinc-400 mt-1 max-w-[280px] md:max-w-none">Optimized NLP classifiers using XGBoost pipelines to identify high-density traits.</p>
+                <h3 className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1 md:mt-0">Fraud Review Accuracy</h3>
+                <p className="text-xs text-dark/75 dark:text-zinc-400 mt-1 max-w-[280px] md:max-w-none">Maintained high review accuracy while investigating suspicious financial transactions and fraud patterns.</p>
               </div>
             </div>
             {/* Metric 2 */}
             <div className="metric-card-mobile">
               <div className="md:w-20 md:flex-shrink-0 flex flex-col items-start justify-start">
-                <span className="text-3xl sm:text-2xl font-extrabold text-gradient">40%</span>
-                <span className="hidden md:block text-[10px] font-black uppercase tracking-wider text-indigo-500/80 dark:text-indigo-400/80 -mt-1">Speedup</span>
-                <span className="md:hidden text-3xl sm:text-2xl font-extrabold text-gradient"> Speedup</span>
+                <span className="text-3xl sm:text-2xl font-extrabold text-gradient">10+</span>
+                <span className="hidden md:block text-[10px] font-black uppercase tracking-wider text-indigo-500/80 dark:text-indigo-400/80 -mt-1">Datasets</span>
+                <span className="md:hidden text-3xl sm:text-2xl font-extrabold text-gradient"> Datasets</span>
               </div>
               <div className="md:flex-1 md:min-w-0">
-                <h3 className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1 md:mt-0">Translation Latency</h3>
-                <p className="text-xs text-dark/75 dark:text-zinc-400 mt-1 max-w-[280px] md:max-w-none">Implemented custom caching layer for AI translators, bypassing redundant API calls.</p>
+                <h3 className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1 md:mt-0">Real-world Datasets Analyzed</h3>
+                <p className="text-xs text-dark/75 dark:text-zinc-400 mt-1 max-w-[280px] md:max-w-none">Performed exploratory analysis, cleaning, visualization, and business insight generation using real datasets.</p>
               </div>
             </div>
             {/* Metric 3 */}
             <div className="metric-card-mobile">
               <div className="md:w-20 md:flex-shrink-0 flex flex-col items-start justify-start">
-                <span className="text-3xl sm:text-2xl font-extrabold text-gradient">18%</span>
-                <span className="hidden md:block text-[10px] font-black uppercase tracking-wider text-indigo-500/80 dark:text-indigo-400/80 -mt-1">Reduction</span>
-                <span className="md:hidden text-3xl sm:text-2xl font-extrabold text-gradient"> Reduction</span>
+                <span className="text-3xl sm:text-2xl font-extrabold text-gradient">10+</span>
+                <span className="hidden md:block text-[10px] font-black uppercase tracking-wider text-indigo-500/80 dark:text-indigo-400/80 -mt-1">Projects</span>
+                <span className="md:hidden text-3xl sm:text-2xl font-extrabold text-gradient"> Projects</span>
               </div>
               <div className="md:flex-1 md:min-w-0">
-                <h3 className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1 md:mt-0">Banking Customer Attrition</h3>
-                <p className="text-xs text-dark/75 dark:text-zinc-400 mt-1 max-w-[280px] md:max-w-none">Audited bank logs and constructed churn dashboards to identify active attrition triggers.</p>
+                <h3 className="text-xs font-bold text-dark/60 dark:text-zinc-500 uppercase tracking-widest mt-1 md:mt-0">End-to-End Software Projects</h3>
+                <p className="text-xs text-dark/75 dark:text-zinc-400 mt-1 max-w-[280px] md:max-w-none">Designed and developed complete software applications from frontend UI to backend logic and deployment.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Areas of Expertise Section */}
+          <div className="border-t border-dark/10 dark:border-white/5 mt-20 pt-16 mb-12">
+            <h2 className="font-black text-4xl md:text-3xl text-left text-gradient uppercase tracking-tight mb-10">
+              Areas of Expertise
+            </h2>
+            
+            <div className="grid grid-cols-4 lg:grid-cols-2 md:grid-cols-1 gap-6 w-full text-left">
+              {/* Card 1: Data Analytics */}
+              <div className="glass-card glass-card-hover p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm relative flex flex-col justify-between min-h-[220px]">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-500">01 // ANALYTICS</span>
+                    <svg className="w-5 h-5 text-dark/60 dark:text-zinc-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-black text-dark dark:text-light mb-2 tracking-tight">Data Analytics</h3>
+                  <p className="text-xs text-dark/70 dark:text-zinc-400 leading-relaxed">
+                    SQL, Power BI, Excel, Business Intelligence, and Dashboard Design. Extracting key insights to drive strategic business decisions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: Data Science */}
+              <div className="glass-card glass-card-hover p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm relative flex flex-col justify-between min-h-[220px]">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-500">02 // SCIENCE</span>
+                    <svg className="w-5 h-5 text-dark/60 dark:text-zinc-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-black text-dark dark:text-light mb-2 tracking-tight">Data Science</h3>
+                  <p className="text-xs text-dark/70 dark:text-zinc-400 leading-relaxed">
+                    Python, Pandas, NumPy, Machine Learning, and Predictive Analytics. Designing model pipelines to forecast anomalies and risk trends.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Software Engineering */}
+              <div className="glass-card glass-card-hover p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm relative flex flex-col justify-between min-h-[220px]">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-500">03 // ENGINEERING</span>
+                    <svg className="w-5 h-5 text-dark/60 dark:text-zinc-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-black text-dark dark:text-light mb-2 tracking-tight">Software Engineering</h3>
+                  <p className="text-xs text-dark/70 dark:text-zinc-400 leading-relaxed">
+                    React, Next.js, Node.js, REST APIs, and Full Stack Development. Constructing responsive interfaces and scalable back-end services.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4: Problem Solving */}
+              <div className="glass-card glass-card-hover p-6 rounded-2xl border border-dark/10 dark:border-white/5 shadow-sm relative flex flex-col justify-between min-h-[220px]">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-500">04 // SYSTEMS</span>
+                    <svg className="w-5 h-5 text-dark/60 dark:text-zinc-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-black text-dark dark:text-light mb-2 tracking-tight">Problem Solving</h3>
+                  <p className="text-xs text-dark/70 dark:text-zinc-400 leading-relaxed">
+                    Algorithm Design, Data Structures, System Thinking, UI/UX, and Performance Optimization. Engineering logical solutions for real-world impact.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -57,30 +57,30 @@ const CaseStudyCard = ({ position, company, companyLink, time, address, metrics,
         <div className="col-span-8 flex flex-col gap-6 text-base text-dark/80 dark:text-zinc-300 font-medium">
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">The Problem</h4>
-            <p className="leading-relaxed text-dark/70 dark:text-zinc-400">
+            <div className="leading-relaxed text-dark/70 dark:text-zinc-400">
               {problem}
-            </p>
+            </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Workflow & Responsibilities</h4>
-            <p className="leading-relaxed text-dark/70 dark:text-zinc-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Responsibilities</h4>
+            <div className="leading-relaxed text-dark/70 dark:text-zinc-400">
               {workflow}
-            </p>
+            </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Business Value</h4>
-            <p className="leading-relaxed text-dark/70 dark:text-zinc-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Impact</h4>
+            <div className="leading-relaxed text-dark/70 dark:text-zinc-400">
               {value}
-            </p>
+            </div>
           </div>
 
           <div className="border-t border-dark/5 dark:border-white/5 pt-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-dark dark:text-light mb-2">Lessons Learned</h4>
-            <p className="leading-relaxed text-dark/70 dark:text-zinc-400 italic">
+            <div className="leading-relaxed text-dark/70 dark:text-zinc-400 italic">
               {lessons}
-            </p>
+            </div>
           </div>
         </div>
 
@@ -103,11 +103,23 @@ const Experience = () => {
           companyLink="https://www.cesltd.com/"
           time="October 2025 – May 2026"
           address="Chennai, TN"
-          metrics="Audited 10,000+ Profiles"
-          tools={["SQL", "Risk Classifiers", "Data Auditing", "Pattern Analysis", "Excel"]}
-          problem="High-volume transactional flows presented complex vectors for transaction fraud and financial leakage. Detecting these anomalies required analytical logic, risk assessment, and systematic database queries."
-          workflow="Conducted daily audits of transaction datasets using SQL query logic. Designed and validated structured rule-filters to detect suspicious behavior patterns and anomalies. Investigated high-risk merchant profiles and verified accounts."
-          value="Mitigated financial liabilities by delivering high-precision risk metrics and predictive reports to operations, leading to data-driven security policies."
+          metrics="95%+ Review Accuracy"
+          tools={["SQL", "Fraud Detection Systems", "Risk Classifiers", "Data Auditing", "Pattern Analysis", "Excel", "Internal Tools"]}
+          problem="High-volume transactional flows presented complex vectors for transaction fraud and financial leakage. Detecting anomalies and verifying patterns required analytical logic, risk assessment, and precise database audits."
+          workflow={
+            <ul className="list-disc pl-5 space-y-1.5 text-dark/70 dark:text-zinc-400">
+              <li>Conducted daily audits of transaction datasets using SQL query logic to identify anomalous behavior.</li>
+              <li>Designed and validated structured rule-filters that flagged high-risk merchant accounts.</li>
+              <li>Investigated suspicious financial transactions and investigated fraud patterns.</li>
+            </ul>
+          }
+          value={
+            <ul className="list-disc pl-5 space-y-1.5 text-dark/70 dark:text-zinc-400">
+              <li>Maintained high review accuracy while investigating suspicious financial transactions.</li>
+              <li>Mitigated financial liabilities by delivering high-precision risk metrics and predictive reports to operations.</li>
+              <li>Provided actionable insights to operations, leading to data-driven security policies.</li>
+            </ul>
+          }
           lessons="I learned that data auditing requires absolute precision and logical rigor. Speed is useless without systematic verification, especially in high-risk financial datasets."
         />
 
@@ -117,11 +129,22 @@ const Experience = () => {
           companyLink="https://vcodez.com"
           time="Feb 2025 - July 2025"
           address="Chennai, TN"
-          metrics="4+ Preprocessing Pipelines"
-          tools={["Python", "Pandas", "Scikit-Learn", "XGBoost", "SQL", "Git"]}
+          metrics="10+ Datasets Cleaned & Visualized"
+          tools={["Python", "Pandas", "Scikit-Learn", "XGBoost", "SQL", "Git", "Power BI"]}
           problem="Raw logs and user engagement data sat in disparate siloed formats, limiting the capacity of analytics to identify retention curves or predict customer attrition triggers."
-          workflow="Built and optimized ETL and feature-extraction pipelines in Python. Conducted Exploratory Data Analysis (EDA) to map active retention metrics. Trained and fine-tuned gradient-boosted classification models (XGBoost) for user profiling."
-          value="Provided the data infrastructure and preprocessed records that powered downstream stakeholder dashboards, cutting manual data queries for analytics by hours."
+          workflow={
+            <ul className="list-disc pl-5 space-y-1.5 text-dark/70 dark:text-zinc-400">
+              <li>Built and optimized ETL and feature-extraction pipelines in Python.</li>
+              <li>Conducted Exploratory Data Analysis (EDA) to map active retention metrics.</li>
+              <li>Trained and fine-tuned gradient-boosted classification models (XGBoost) for user profiling.</li>
+            </ul>
+          }
+          value={
+            <ul className="list-disc pl-5 space-y-1.5 text-dark/70 dark:text-zinc-400">
+              <li>Provided the data infrastructure and preprocessed records that powered downstream stakeholder dashboards.</li>
+              <li>Reduced manual data retrieval time for downstream analytics teams by hours.</li>
+            </ul>
+          }
           lessons="Building machine learning models is only a fraction of the challenge; feature engineering, data hygiene, and translating quantitative metrics into actionable business context are where true values are made."
         />
       </div>

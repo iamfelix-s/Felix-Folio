@@ -13,7 +13,7 @@ import proj5 from "../../public/images/projects/agency-website-cover-image.jpg";
 import proj6 from "../../public/images/projects/devdreaming.jpg";
 import TransitionEffect from "@/components/TransitionEffect";
 
-const ProductLaunch = ({ title, type, tech, img, link, github, architecture, features, challenge, impact, future, priority = false }) => {
+const ProductLaunch = ({ title, type, tech, img, link, github, overview, problem, solution, features, outcome, future, priority = false }) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -49,7 +49,7 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
             className="rounded-full bg-dark text-light dark:bg-light dark:text-dark px-6 py-2.5 text-sm font-bold tracking-tight hover:bg-dark/80 dark:hover:bg-light/90 shadow-md transition-all duration-300"
             aria-label={`Visit project live`}
           >
-            Live App
+            Live Demo
           </Link>
         </div>
       </div>
@@ -83,12 +83,17 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
         {/* Specs & Architecture */}
         <div className="col-span-7 flex flex-col gap-6 text-sm text-dark/80 dark:text-zinc-300 font-medium leading-relaxed">
           <div>
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">System Architecture</h4>
-            <p className="text-dark/70 dark:text-zinc-400">{architecture}</p>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">Overview</h4>
+            <p className="text-dark/70 dark:text-zinc-400">{overview}</p>
           </div>
 
           <div>
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">Key Capabilities</h4>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">Solution (Engineering Solution)</h4>
+            <p className="text-dark/70 dark:text-zinc-400">{solution}</p>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">Key Capabilities & Features</h4>
             <ul className="list-disc pl-4 space-y-1 text-dark/70 dark:text-zinc-400">
               {features.map((f, idx) => (
                 <li key={idx}>{f}</li>
@@ -98,17 +103,17 @@ const ProductLaunch = ({ title, type, tech, img, link, github, architecture, fea
 
           <div className="grid grid-cols-2 sm:grid-cols-1 gap-6 border-t border-dark/5 dark:border-white/5 pt-6">
             <div>
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-indigo-500 mb-1.5">Engineering Challenge</h4>
-              <p className="text-xs text-dark/70 dark:text-zinc-400 leading-normal">{challenge}</p>
+              <h4 className="text-xs font-extrabold uppercase tracking-wider text-indigo-500 mb-1.5">Problem (Business Challenge)</h4>
+              <p className="text-xs text-dark/70 dark:text-zinc-400 leading-normal">{problem}</p>
             </div>
             <div>
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-emerald-500 mb-1.5">Impact & Business Value</h4>
-              <p className="text-xs text-dark/70 dark:text-zinc-400 leading-normal">{impact}</p>
+              <h4 className="text-xs font-extrabold uppercase tracking-wider text-emerald-500 mb-1.5">Outcome (Business Value)</h4>
+              <p className="text-xs text-dark/70 dark:text-zinc-400 leading-normal">{outcome}</p>
             </div>
           </div>
 
           <div className="border-t border-dark/5 dark:border-white/5 pt-4">
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">Future Scope</h4>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-dark dark:text-light mb-1.5">Future Roadmap</h4>
             <p className="text-xs text-dark/70 dark:text-zinc-400">{future}</p>
           </div>
         </div>
@@ -127,6 +132,11 @@ export default function Projects() {
           name="description"
           content="Explore detailed launch sheets of engineering projects covering quantitative analysis, machine learning pipelines, and full-stack web applications."
         />
+        <link rel="canonical" href="https://felixfolio.vercel.app/projects" />
+        <meta property="og:title" content="Felix Folio | Projects - Flagship System Launches" />
+        <meta property="og:description" content="Explore detailed launch sheets of engineering projects covering quantitative analysis, machine learning pipelines, and full-stack web applications." />
+        <meta name="twitter:title" content="Felix Folio | Projects - Flagship System Launches" />
+        <meta name="twitter:description" content="Explore detailed launch sheets of engineering projects covering quantitative analysis, machine learning pipelines, and full-stack web applications." />
       </Head>
 
       <main className="mb-12 flex w-full flex-col items-center justify-center relative z-10">
@@ -147,14 +157,15 @@ export default function Projects() {
               link="https://github.com/iamfelix-s/VCodez/tree/main/Translatify"
               github="https://github.com/iamfelix-s/VCodez/tree/main/Translatify"
               priority={true}
-              architecture="Client React container feeds user text/speech input to a Node.js middleware. The backend proxies translation tasks to pre-trained transformer pipelines on HuggingFace, caching repeated phrases in localized caches."
+              overview="An intelligent real-time multilingual translation client leveraging pre-trained NLP models to facilitate voice and text communication."
+              problem="High latency in third-party inference APIs resulted in noticeable delays during interactive voice-to-text sessions, degrading user experience."
+              solution="Deployed a custom Node.js middleware layer integrated with client-side caching maps and a voice-packet debouncing queue to optimize API utilization."
               features={[
                 "Real-time dual translation stream for voice-to-text inputs.",
                 "Localized client-side caching of translated assets to bypass API delays.",
                 "Custom route gateways filtering repetitive input strings."
               ]}
-              challenge="Reducing inference API latency for interactive speech. Solved by implementing client-side caching maps and a debounce queue for voice packets."
-              impact="Decreased translation delay by 40% for repetitive queries, optimizing third-party model inference usage rates."
+              outcome="Reduced translation latency by 40% for frequent queries, significantly lowering HuggingFace inference costs while maintaining high translation accuracy."
               future="Integrating localized offline model configurations using ONNX runtimes in the browser."
             />
 
@@ -166,14 +177,15 @@ export default function Projects() {
               img={proj3}
               link="https://github.com/iamfelix-s/VCodez/tree/main/ML-Based%20Stroke%20Risk%20Prediction"
               github="https://github.com/iamfelix-s/VCodez/tree/main/ML-Based%20Stroke%20Risk%20Prediction"
-              architecture="Takes input parameters (clinical diagnostic indicators) via a REST API. Evaluates raw features using trained Random Forest and Logistic Regression classifiers, returning calculated risk coefficients."
+              overview="A machine learning classification dashboard predicting patient stroke risks using multi-variable clinical and demographic parameters."
+              problem="Severe dataset class imbalance, with positive stroke instances representing less than 5% of records, biased models toward false negatives."
+              solution="Trained Random Forest and Logistic Regression classifiers on clinical indicators processed through SMOTE oversampling and audited decision threshold calibrations."
               features={[
                 "Preprocessed demographics and clinical histories (glucose levels, heart rate metrics).",
                 "Feature correlation maps exposing relative statistical impact.",
                 "RESTful endpoint integration for external EHR software bindings."
               ]}
-              challenge="Handling extreme class imbalance where stroke positives made up under 5% of raw datasets. Solved by applying SMOTE (Oversampling) and auditing threshold calibrations."
-              impact="Achieved 92% classification accuracy, establishing diagnostic pre-screening viability."
+              outcome="Achieved a 92% diagnostic pre-screening accuracy, providing a solid proof-of-concept for automated EHR screening systems."
               future="Training neural networks on dense medical charts and deploying models to containerized environments."
             />
 
@@ -185,14 +197,15 @@ export default function Projects() {
               img={proj2}
               link="https://github.com/iamfelix-s/Grocery_Web_App"
               github="https://github.com/iamfelix-s/Grocery_Web_App"
-              architecture="React SPA handles layouts and shopping cart state. An Express server controls JSON endpoints, managing authentication (JWT) and cart persistence on a MongoDB backend."
+              overview="A full-featured responsive eCommerce web application with persistent shopping cart management and secure checkout pipelines."
+              problem="High concurrency during discount drops caused database locks and inventory inconsistencies due to race conditions in stock update transactions."
+              solution="Configured atomic transactions in MongoDB coupled with JWT-based session security and staged schema filters to lock resources during checkout writes."
               features={[
                 "Secure session flows and token-based client credentials.",
                 "Scalable inventory modeling with real-time stock deductions.",
                 "Dynamic search queries routing index filters in MongoDB."
               ]}
-              challenge="Resolving transaction conflicts when concurrent checkouts target identical limited inventories. Solved by writing transactional queries."
-              impact="Delivered a zero-leak checkout database module with fast page load performance."
+              outcome="Delivered a zero-leak transactional database checkout module capable of resolving concurrent checkouts with fast response times."
               future="Configuring webhooks to automatically adjust inventory based on supplier notifications."
             />
 
@@ -204,14 +217,15 @@ export default function Projects() {
               img={proj4}
               link="https://github.com/iamfelix-s/Projects/tree/main/MBTI-PersonalityTest"
               github="https://github.com/iamfelix-s/Projects/tree/main/MBTI-PersonalityTest"
-              architecture="Cleans and preprocesses written text samples, parses tokens into TF-IDF vector structures, and runs gradient-boosted multi-class classification nodes to predict Myers-Briggs indicators."
+              overview="An NLP text classification engine predicting Myers-Briggs Type Indicators from custom written text samples."
+              problem="High entropy and structural variation in written social media posts made feature extraction difficult for traditional bag-of-words classifiers."
+              solution="Preprocessed text files with stopword filtering and token regex parsing, extracting feature arrays using tuned TF-IDF vectorizers before running XGBoost models."
               features={[
                 "Text preprocessing module stripping emojis, URLs, and excessive stop words.",
                 "TF-IDF tokenizers mapping feature sets of frequent phrases.",
                 "Multi-class XGBoost models returning statistical distributions of personality traits."
               ]}
-              challenge="High-entropy text datasets with varied sentence structure. Solved by tuning tf-idf parameters and deploying structural regularization checks."
-              impact="Reached 85% validation alignment, demonstrating utility for automated client targeting dashboards."
+              outcome="Attained an 85% validation accuracy, demonstrating viability for dashboard categorization of user feedback."
               future="Fine-tuning transformer topologies (BERT) to extract structural emotional semantics."
             />
 
@@ -223,14 +237,15 @@ export default function Projects() {
               img={proj5}
               link="https://github.com/iamfelix-s/Projects/tree/main/Banking-Analytics"
               github="https://github.com/iamfelix-s/Projects/tree/main/Banking-Analytics"
-              architecture="Extracts bank logs, cleans records using SQL staging schemas, constructs dimensional models, and builds Power BI dashboards displaying key indicators."
+              overview="An end-to-end data analytics and business intelligence pipeline mapping active customer attrition metrics."
+              problem="Raw banking transaction logs were siloed and contained convoluted circular dependencies, preventing stakeholders from identifying churn triggers."
+              solution="Constructed a unified Star Schema data model in SQL Server, developed advanced DAX metrics in Power BI, and mapped customer attribute risk curves."
               features={[
                 "Custom SQL schemas consolidating raw account records into unified datasets.",
                 "Interactive BI filters parsing indicators (e.g. credit scores, transaction frequency).",
                 "Advanced DAX metrics charting active customer churn probability rates."
               ]}
-              challenge="Modeling convoluted banking logs containing circular account dependencies. Solved by staging standard Star Schemas."
-              impact="Isolated attrition causes, identifying indicators that supported banking campaigns to reduce churn by 18%."
+              outcome="Isolated attrition causes, identifying indicators that supported banking campaigns to reduce churn by 18%."
               future="Setting up automated scheduled dashboard updates using DirectQuery pipelines."
             />
 
@@ -242,14 +257,15 @@ export default function Projects() {
               img={proj6}
               link="https://github.com/iamfelix-s/VCodez/tree/main/Twitter-Sentiment-Analysis"
               github="https://github.com/iamfelix-s/VCodez/tree/main/Twitter-Sentiment-Analysis"
-              architecture="Connects to real-time streams via Tweepy, parses incoming text strings through TextBlob lexicon filters, and outputs statistical sentiment scores."
+              overview="A streaming NLP analysis engine tracking real-time brand sentiment scores from social media API feeds."
+              problem="Sudden spikes in streaming volume triggered strict API rate limits and resulted in noisy data payloads containing spam and formatting issues."
+              solution="Built a multi-threaded Python ingestion client using Tweepy with automatic backoff retry schedules and TextBlob lexicon filters."
               features={[
                 "Real-time API parser with automatic rate-limit filtering.",
                 "Text sentiment score indicators returning positivity/negativity splits.",
                 "Automated matplot data visualizations plotting logs dynamically."
               ]}
-              challenge="Managing high rate-limiting restrictions and cleaning short, noisy text strings. Solved by configuring backoff timers and regex pre-filters."
-              impact="Operated as a functional brand tracker, enabling instant reputation indicators."
+              outcome="Delivered a functional brand reputation tracker displaying real-time sentiment distribution maps to support instant brand tracking."
               future="Migrating to Apache Kafka to handle massive streaming data loads."
             />
 

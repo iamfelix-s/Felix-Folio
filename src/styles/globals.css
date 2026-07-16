@@ -185,5 +185,86 @@ body, main, header, footer, .glass-card, button, input, textarea, a {
               box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Tactile Active Press State */
+button:active, 
+a:active, 
+.glass-card-hover:active {
+  transform: scale(0.995);
+  transition: transform 100ms cubic-bezier(0.16, 1, 0.3, 1);
+}
 
+/* Premium Focus States */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible {
+  outline: 2px solid rgb(99 102 241);
+  outline-offset: 3px;
+}
 
+/* ==========================================
+   Custom Cursor — Native Cursor Management
+   ========================================== */
+/* When .cursor-active is present on body, hide native cursor.
+   Class is toggled dynamically by CustomCursor.js.
+   On text hover, the class is removed so native I-beam appears. */
+body.cursor-active,
+body.cursor-active a,
+body.cursor-active button,
+body.cursor-active [role='button'],
+body.cursor-active img,
+body.cursor-active .glass-card,
+body.cursor-active .metric-card-mobile,
+body.cursor-active .image-hover-container,
+body.cursor-active label,
+body.cursor-active select,
+body.cursor-active summary {
+  cursor: none;
+}
+
+/* ==========================================
+   F Brand Badge — Premium Living Interaction
+   ========================================== */
+
+/* Idle Breathing Ambient Highlight
+   Slow-drifting radial light that gives the badge
+   a living, reflective quality even at rest */
+@keyframes logo-breathe {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-1px, -1px) scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translate(1px, 1px) scale(1.08);
+  }
+}
+.logo-breathe {
+  animation: logo-breathe 5s ease-in-out infinite;
+}
+
+/* Specular Glass Reflection Sweep
+   A skewed light band resting off-screen left.
+   On hover it sweeps diagonally across the badge surface,
+   mimicking light catching the surface of polished glass. */
+.logo-specular {
+  transform: translateX(-140%) skewX(-14deg);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 250ms ease;
+}
+.group:hover .logo-specular {
+  transform: translateX(140%) skewX(-14deg);
+}
+
+/* F Letter Dynamic Glow
+   On hover the letter F gains a soft luminous halo
+   and slight brightness increase */
+.logo-text {
+  transition: text-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 500ms ease;
+}
+.group:hover .logo-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.45),
+               0 0 40px rgba(99, 102, 241, 0.2);
+  filter: brightness(1.2);
+}

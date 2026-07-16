@@ -32,6 +32,11 @@ export default function Contact() {
           name="description"
           content="Get in touch with Felix. Open for data science internships, software engineering roles, and consulting queries. Connect today."
         />
+        <link rel="canonical" href="https://felixfolio.vercel.app/contact" />
+        <meta property="og:title" content="Felix Folio | Contact - Let&apos;s Connect" />
+        <meta property="og:description" content="Get in touch with Felix. Open for data science internships, software engineering roles, and consulting queries. Connect today." />
+        <meta name="twitter:title" content="Felix Folio | Contact - Let&apos;s Connect" />
+        <meta name="twitter:description" content="Get in touch with Felix. Open for data science internships, software engineering roles, and consulting queries. Connect today." />
       </Head>
 
       <TransitionEffect />

@@ -40,6 +40,11 @@ export default function About() {
       <Head>
         <title>Felix Folio | About - Narrative & Core Skills</title>
         <meta name="description" content="Learn about Felix's professional background in Computer Science & Engineering, his logic-driven analytical methodology, and his software engineering philosophy." />
+        <link rel="canonical" href="https://felixfolio.vercel.app/about" />
+        <meta property="og:title" content="Felix Folio | About - Narrative & Core Skills" />
+        <meta property="og:description" content="Learn about Felix's professional background in Computer Science & Engineering, his logic-driven analytical methodology, and his software engineering philosophy." />
+        <meta name="twitter:title" content="Felix Folio | About - Narrative & Core Skills" />
+        <meta name="twitter:description" content="Learn about Felix's professional background in Computer Science & Engineering, his logic-driven analytical methodology, and his software engineering philosophy." />
       </Head>
       <main
         className="flex w-full flex-col items-center justify-center relative z-10"
@@ -95,7 +100,7 @@ export default function About() {
                   Professional Journey
                 </h2>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
-                  My entry into technology began in Computer Science & Engineering, where I fell in love with algorithmic structure and data organization. Over time, I discovered that software is only half the puzzle—the real value lies in the data flowing through it.
+                  My entry into technology began in Computer Science & Engineering, where I fell in love with algorithmic structure and data organization. Over time, I discovered that software is only half the puzzle-the real value lies in the data flowing through it.
                 </p>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium mt-4">
                   This realization led me to focus on Data Science and quantitative analytics. Today, I build systems that are both computationally robust and capable of generating actionable intelligence.
@@ -128,7 +133,7 @@ export default function About() {
                   Growth & Motivation
                 </h2>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium">
-                  I am driven by structural efficiency—getting a dataset cleanly preprocessed or refactoring a complex codebase into elegant services. 
+                  I am driven by structural efficiency-getting a dataset cleanly preprocessed or refactoring a complex codebase into elegant services. 
                 </p>
                 <p className="text-base text-dark/80 dark:text-zinc-400 font-medium mt-4">
                   Currently, I am expanding my knowledge in advanced statistical forecasting and real-time streaming architectures to further strengthen my full-stack capabilities.

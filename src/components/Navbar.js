@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
@@ -93,6 +94,30 @@ const Navbar = () => {
         <nav className="flex items-center justify-center flex-wrap gap-4">
           <motion.a
             target={"_blank"}
+            className="w-6 h-6 relative flex items-center justify-center text-dark/70 dark:text-light/70 hover:text-primary dark:hover:text-primaryDark"
+            href="https://afero-tech.netlify.app/"
+            whileHover={{ y: -2, scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Visit Afero"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/afero.png"
+              alt="Afero Light"
+              width={24}
+              height={24}
+              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${mode === "dark" ? "opacity-100" : "opacity-0"}`}
+            />
+            <Image
+              src="/images/afero_dark.png"
+              alt="Afero Dark"
+              width={24}
+              height={24}
+              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${mode === "light" ? "opacity-100" : "opacity-0"}`}
+            />
+          </motion.a>
+          <motion.a
+            target={"_blank"}
             className="w-6 text-dark/70 dark:text-light/70 hover:text-primary dark:hover:text-primaryDark"
             href="https://github.com/iamfelix-s"
             whileHover={{ y: -2, scale: 1.05 }}
@@ -150,6 +175,30 @@ const Navbar = () => {
         </nav>
         
         <nav className="flex items-center justify-center gap-5 mt-6">
+          <motion.a
+            target={"_blank"}
+            className="w-8 h-8 p-1 relative flex items-center justify-center text-dark/70 dark:text-light/70 hover:text-primary dark:hover:text-primaryDark"
+            href="https://afero-tech.netlify.app/"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Visit Afero"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/afero.png"
+              alt="Afero Light"
+              width={24}
+              height={24}
+              className={`absolute w-6 h-6 object-contain transition-opacity duration-300 ${mode === "dark" ? "opacity-100" : "opacity-0"}`}
+            />
+            <Image
+              src="/images/afero_dark.png"
+              alt="Afero Dark"
+              width={24}
+              height={24}
+              className={`absolute w-6 h-6 object-contain transition-opacity duration-300 ${mode === "light" ? "opacity-100" : "opacity-0"}`}
+            />
+          </motion.a>
           <motion.a
             target={"_blank"}
             className="w-8 p-1 text-dark/70 dark:text-light/70 hover:text-primary dark:hover:text-primaryDark"
